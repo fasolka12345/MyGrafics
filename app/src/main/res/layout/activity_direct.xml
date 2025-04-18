@@ -65,14 +65,19 @@
         android:id="@+id/textCreate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:fontFamily="casual"
+        android:onClick="clickCreate"
         android:text="Create"
         android:textColor="#FFFFFF"
         android:textColorLink="#FFFFFF"
         android:textSize="34sp"
-        android:onClick="clickCreate"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="514dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextb"
+        app:layout_constraintVertical_bias="0.265"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,5 @@
 package com.example.mygrafics;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,14 +15,10 @@ public class DirectActivity extends AppCompatActivity {
         setContentView(R.layout.activity_direct);
 
         View view = findViewById(R.id.textCreate);
-        view.setOnClickListener(this::clickCreate(this));
+        view.setOnClickListener(this::clickCreate);
     }
-    public void clickCreate(Context context) {
-        Intent intent = new Intent(
-                super.onCreate(this);
-                EdgeToEdge.enable(this);
-                setContentView(new Direct(this));
-        );
+    public void clickCreate(View view) {
+        Intent intent = new Intent(getApplicationContext(), LineActivity.class);
         startActivity(intent);
     }
 }
