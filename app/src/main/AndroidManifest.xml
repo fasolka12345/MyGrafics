@@ -26,6 +26,10 @@
             android:name=".GraficsActivity"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".DirectActivity"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>

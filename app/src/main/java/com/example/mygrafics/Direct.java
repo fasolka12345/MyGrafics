@@ -8,8 +8,8 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-public class Grafics extends View {
-    public Grafics(Context context) {
+public class Direct extends View {
+    public Direct(Context context) {
         super(context);
     }
 

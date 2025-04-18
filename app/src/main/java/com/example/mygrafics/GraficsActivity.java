@@ -12,14 +12,14 @@ public class GraficsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_grafics);
 
-        View view = findViewById(R.id.textView2);
-        view.setOnClickListener(this::pushStart);
+        View view = findViewById(R.id.textDirect);
+        view.setOnClickListener(this::clickDirect);
     }
 
-    public void pushStart(View view) {
-        Intent intent = new Intent(getApplicationContext(), GraficsActivity.class);
+    public void clickDirect(View view) {
+        Intent intent = new Intent(getApplicationContext(), DirectActivity.class);
         startActivity(intent);
     }
 }
