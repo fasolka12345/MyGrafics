@@ -7,27 +7,18 @@ import android.view.View;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class AboutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_about); //
 
-        View start = findViewById(R.id.textStart);
-        start.setOnClickListener(this::pushStart);
-
-        View exit = findViewById(R.id.textExit);
-        exit.setOnClickListener(this::pushExit);
-
+        View start = findViewById(R.id.textView13);
+        start.setOnClickListener(this::clickStart);//
     }
-
-    public void pushStart(View view) {
+    public void clickStart(View view) {
         Intent intent = new Intent(getApplicationContext(), GraficsActivity.class);
         startActivity(intent);
-    }
-
-    public void pushExit(View view) {
-        finishAndRemoveTask();
     }
 }
