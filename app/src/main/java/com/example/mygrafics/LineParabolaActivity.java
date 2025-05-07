@@ -19,7 +19,7 @@ public class LineParabolaActivity extends AppCompatActivity {
         String b1 = intent.getStringExtra("b1");
         String c1 = intent.getStringExtra("c1");
 
-        parabolaView = new Parabola(this);
+        parabolaView = new Parabola(this, null);
         parabolaView.setA1(a1);
         parabolaView.setB1(b1);
         parabolaView.setC1(c1);

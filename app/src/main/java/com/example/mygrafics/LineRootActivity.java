@@ -19,7 +19,7 @@ public class LineRootActivity extends AppCompatActivity {
         String b2 = intent.getStringExtra("b2");
         String c2 = intent.getStringExtra("c2");
 
-        rootView = new Root(this);
+        rootView = new Root(this, null);
         rootView.setA2(a2);
         rootView.setB2(b2);
         rootView.setC2(c2);

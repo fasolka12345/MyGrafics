@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.util.AttributeSet;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -13,7 +14,7 @@ public class Root extends View {
     private String b2;
     private String c2;
 
-    public Root(Context context) {
+    public Root(Context context, AttributeSet attributeSet) {
         super(context);
     }
 

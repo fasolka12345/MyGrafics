@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.util.AttributeSet;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -13,8 +14,8 @@ public class Parabola extends View {
     private String b1;
     private String c1;
 
-    public Parabola(Context context) {
-        super(context);
+    public Parabola(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet);
     }
 
     @Override
