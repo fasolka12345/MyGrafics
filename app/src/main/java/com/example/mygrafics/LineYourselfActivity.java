@@ -28,11 +28,11 @@ public class LineYourselfActivity extends AppCompatActivity {
     }
 
     public void clickCompareDirect(View view) {
-        Intent intent = new Intent(LineYourselfActivity.this, LineCompareActivity.class);
+        /*Intent intent = new Intent(LineYourselfActivity.this, LineCompareActivity.class);
         String k = getIntent().getStringExtra("k");
         String b = getIntent().getStringExtra("b");
         intent.putExtra("k", k);
         intent.putExtra("b", b);
-        startActivity(intent);
+        startActivity(intent); */
     }
 }

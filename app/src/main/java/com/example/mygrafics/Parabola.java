@@ -67,7 +67,7 @@ public class Parabola extends View {
 
         //строим график
         paint.setStrokeWidth(7);
-        paint.setColor(Color.RED);
+        paint.setColor(Color.CYAN);
         for (float x = x1; x <= x2; x+= step) {
             float y = a*(x+b)*(x+b)+c;
             canvas.drawPoint(x*mas+width/2, height/2-y*mas, paint);

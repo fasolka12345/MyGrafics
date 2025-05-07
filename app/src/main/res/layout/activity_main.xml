@@ -9,20 +9,19 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/mainmain" />
+        app:srcCompat="@drawable/mainmain"
+        android:scaleType="centerCrop"/>
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="123dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="casual"
         android:text="Menu"
         android:textColor="#A6A1A1"
@@ -32,24 +31,23 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView2"
-        android:onClick="pushStart"
         app:layout_constraintVertical_bias="0.234" />
 
     <TextView
         android:id="@+id/textStart"
-        android:layout_width="158dp"
-        android:layout_height="61dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="casual"
-        android:text="Start"
         android:onClick="pushStart"
+        android:text="Start"
         android:textColor="#FFFFFF"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintHorizontal_bias="0.336"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.16" />
+        app:layout_constraintVertical_bias="0.149" />
 
     <TextView
         android:id="@+id/textAbout"
@@ -57,7 +55,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="casual"
         android:text="About"
-        android:textColor="#FFFDFD"
+        android:onClick="pushAbout"
+        android:textColor="#FFFFFF"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

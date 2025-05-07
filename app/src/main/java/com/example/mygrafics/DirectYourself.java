@@ -28,7 +28,7 @@ public class DirectYourself extends View {
         drawPaint = new Paint();
         drawPaint.setAntiAlias(true);      // Включаем сглаживание
         drawPaint.setDither(true);         // Включаем эффект дитеринга
-        drawPaint.setColor(Color.BLUE);      // Цвет кисти красный
+        drawPaint.setColor(Color.MAGENTA);      // Цвет кисти красный
         drawPaint.setStyle(Paint.Style.STROKE); // Режим рисования — линия
         drawPaint.setStrokeJoin(Paint.Join.ROUND); // Тип соединения отрезков
         drawPaint.setStrokeCap(Paint.Cap.ROUND);  // Форма концов линии
