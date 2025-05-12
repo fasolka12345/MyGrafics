@@ -1,8 +1,10 @@
 package com.example.mygrafics;
 
 import android.content.Intent;
+import android.graphics.Path;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,11 +30,8 @@ public class LineYourselfActivity extends AppCompatActivity {
     }
 
     public void clickCompareDirect(View view) {
-        /*Intent intent = new Intent(LineYourselfActivity.this, LineCompareActivity.class);
-        String k = getIntent().getStringExtra("k");
-        String b = getIntent().getStringExtra("b");
-        intent.putExtra("k", k);
-        intent.putExtra("b", b);
-        startActivity(intent); */
+        DirectYourself directYourselfView = findViewById(R.id.directYourselfView);
+        directYourselfView.showFunction();
+        directYourselfView.invalidate();
     }
 }
