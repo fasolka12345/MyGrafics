@@ -1,8 +1,10 @@
 package com.example.mygrafics;
 
 import android.content.Intent;
+import android.graphics.Path;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,18 +27,13 @@ public class LineParabolaYourselfActivity extends AppCompatActivity {
         parabolaYourselfView.setB1(b1);
         parabolaYourselfView.setC1(c1);
 
-        View compareDirect = findViewById(R.id.textCompareParabola);
-        compareDirect.setOnClickListener(this::clickCompareParabola);
+        View compareParabola = findViewById(R.id.textCompareParabola);
+        compareParabola.setOnClickListener(this::clickCompareParabola);
     }
 
     public void clickCompareParabola(View view) {
-        Intent intent = new Intent(LineParabolaYourselfActivity.this, LineParabolaActivity.class);
-        String a1 = getIntent().getStringExtra("a1");
-        String b1 = getIntent().getStringExtra("b1");
-        String c1 = getIntent().getStringExtra("c1");
-        intent.putExtra("a1", a1);
-        intent.putExtra("b1", b1);
-        intent.putExtra("c1", c1);
-        startActivity(intent);
+        ParabolaYourself parabolaYourselfView = findViewById(R.id.parabolaYourselfView);
+        parabolaYourselfView.showFunction();
+        parabolaYourselfView.invalidate();
     }
 }

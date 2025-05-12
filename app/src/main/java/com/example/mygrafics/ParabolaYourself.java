@@ -6,18 +6,24 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.Point;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ParabolaYourself extends View {
     private Bitmap bitmap;
     private Canvas canvas;
-    private Path path;
+    private static Path path = new Path();
     private Paint drawPaint;
     private String a1;
     private String b1;
     private String c1;
+
+    private static boolean showFunction = false;
 
     public ParabolaYourself(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
@@ -25,7 +31,6 @@ public class ParabolaYourself extends View {
     }
 
     private void setupDrawing() {
-        path = new Path();   // Путь для рисования линий
         drawPaint = new Paint();
         drawPaint.setAntiAlias(true);      // Включаем сглаживание
         drawPaint.setDither(true);         // Включаем эффект дитеринга
@@ -63,7 +68,7 @@ public class ParabolaYourself extends View {
         float masX = (width/2-20)/Float.max(Math.abs(x1), Math.abs(x2));
         float masY = 0;
         for(float x = x1; x <= x2; x+= step) {
-            float y = a*(x+b)*(x+b)+c;
+            float y = a * (x + b)*(x + b) + c;
             if(Math.abs(y) > masY) masY = Math.abs(y);
         }
         masY = (height/2-20)/masY;
@@ -85,12 +90,18 @@ public class ParabolaYourself extends View {
             canvas.drawLine(0, height/2-y, width, height/2-y, paint);
         }
 
+
         //строим оси
         paint.setStrokeWidth(5);
         paint.setColor(Color.BLACK);
         canvas.drawLine(width/2, 0, width/2, height, paint);
         canvas.drawLine(0, height/2, width, height/2, paint);    // Рисуем фон
+
         canvas.drawPath(path, drawPaint);                            // Отображаем нарисованные пути
+
+        if (showFunction) {
+            Parabola.drawFunction(canvas, a1, b1, c1);
+        }
     }
 
     @Override
@@ -112,11 +123,9 @@ public class ParabolaYourself extends View {
         invalidate();                                                // Обновляем изображение
         return true;
     }
-
     public String getA1() {
         return a1;
     }
-
     public void setA1(String a1) {
         this.a1 = a1;
     }
@@ -124,7 +133,6 @@ public class ParabolaYourself extends View {
     public String getB1() {
         return b1;
     }
-
     public void setB1(String b1) {
         this.b1 = b1;
     }
@@ -132,8 +140,14 @@ public class ParabolaYourself extends View {
     public String getC1() {
         return c1;
     }
-
     public void setC1(String c1) {
         this.c1 = c1;
+    }
+    public void showFunction() {
+        showFunction = true;
+    }
+
+    public Path getPath() {
+        return path;
     }
 }

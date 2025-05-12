@@ -21,57 +21,70 @@ public class Parabola extends View {
     @Override
     protected void onDraw(@NonNull Canvas canvas) {
         super.onDraw(canvas);
+        drawFunction(canvas, getA1(), getB1(), getC1());
+    }
+
+    public static void drawFunction(@NonNull Canvas canvas, String a1, String b1, String c1) {
         float width = canvas.getWidth();
         float height = canvas.getHeight();
         Paint paint = new Paint();
 
-
-        //параметры
+        // Параметры диапазона
         float x1 = -5;
         float x2 = 5;
-        float step = 0.001f;
-        float a = Float.parseFloat(this.getA1());
-        float b = Float.parseFloat(this.getB1());
-        float c = Float.parseFloat(this.getC1());
+        float step = 5 / (width / 2 - 20);
+        float a = Float.parseFloat(a1);
+        float b = Float.parseFloat(b1);
+        float c = Float.parseFloat(c1);
 
-        //считаем масштаб
-        float masX = (width/2-20)/Float.max(Math.abs(x1), Math.abs(x2));
+        // Вычисление масштаба
+        float masX = (width / 2 - 20) / Float.max(Math.abs(x1), Math.abs(x2));
         float masY = 0;
-        for(float x = x1; x <= x2; x+= step) {
-            float y = a*(x+b)*(x+b)+c;
-            if(Math.abs(y) > masY) masY = Math.abs(y);
+        for (float x = x1; x <= x2; x += step) {
+            float y = a * (x + b)*(x + b) + c;
+            if (Math.abs(y) > masY) masY = Math.abs(y);
         }
-        masY = (height/2-20)/masY;
+        masY = (height / 2 - 20) / masY;
         float mas = Float.min(masX, masY);
 
-        //строим сетку
+        // Построение сетки
         paint.setStrokeWidth(3);
         paint.setColor(Color.GRAY);
-        for(int x = 0; x < width/2; x+= mas) {
-            canvas.drawLine(x + width/2, 0, x+width/2, height, paint);
+        for (int x = 0; x < width / 2; x += mas) {
+            canvas.drawLine(x + width / 2, 0, x + width / 2, height, paint);
         }
-        for(int x = 0; x > -width/2; x -= mas) {
-            canvas.drawLine(x+width/2, 0, x+width/2, height, paint);
+        for (int x = 0; x > -width / 2; x -= mas) {
+            canvas.drawLine(x + width / 2, 0, x + width / 2, height, paint);
         }
-        for(int y = 0; y < height/2; y += mas) {
-            canvas.drawLine(0, height/2-y, width, height/2-y, paint);
+        for (int y = 0; y < height / 2; y += mas) {
+            canvas.drawLine(0, height / 2 - y, width, height / 2 - y, paint);
         }
-        for(int y = 0; y > -height/2; y -= mas) {
-            canvas.drawLine(0, height/2-y, width, height/2-y, paint);
+        for (int y = 0; y > -height / 2; y -= mas) {
+            canvas.drawLine(0, height / 2 - y, width, height / 2 - y, paint);
         }
 
-        //строим оси
+        // Оси координат
         paint.setStrokeWidth(5);
         paint.setColor(Color.BLACK);
-        canvas.drawLine(width/2, 0, width/2, height, paint);
-        canvas.drawLine(0, height/2, width, height/2, paint);
+        canvas.drawLine(width / 2, 0, width / 2, height, paint);
+        canvas.drawLine(0, height / 2, width, height / 2, paint);
 
-        //строим график
+        // Построение графика функциями (отрезками)
         paint.setStrokeWidth(7);
-        paint.setColor(Color.CYAN);
-        for (float x = x1; x <= x2; x+= step) {
-            float y = a*(x+b)*(x+b)+c;
-            canvas.drawPoint(x*mas+width/2, height/2-y*mas, paint);
+        paint.setColor(Color.BLUE);
+        float prevX = x1;
+        float prevY = a * (x1 + b)*(x1 + b) + c;
+        for (float x = x1 + step; x <= x2; x += step) {
+            float y = a * (x + b)*(x + b) + c;
+            canvas.drawLine(
+                    prevX * mas + width / 2,
+                    height / 2 - prevY * mas,
+                    x * mas + width / 2,
+                    height / 2 - y * mas,
+                    paint
+            );
+            prevX = x;
+            prevY = y;
         }
     }
 
