@@ -32,20 +32,20 @@ public class ParabolaYourself extends View {
 
     private void setupDrawing() {
         drawPaint = new Paint();
-        drawPaint.setAntiAlias(true);      // Включаем сглаживание
-        drawPaint.setDither(true);         // Включаем эффект дитеринга
-        drawPaint.setColor(Color.MAGENTA);      // Цвет кисти красный
-        drawPaint.setStyle(Paint.Style.STROKE); // Режим рисования — линия
-        drawPaint.setStrokeJoin(Paint.Join.ROUND); // Тип соединения отрезков
-        drawPaint.setStrokeCap(Paint.Cap.ROUND);  // Форма концов линии
-        drawPaint.setStrokeWidth(8);       // Толщина линии
+        drawPaint.setAntiAlias(true);
+        drawPaint.setDither(true);
+        drawPaint.setColor(Color.MAGENTA);
+        drawPaint.setStyle(Paint.Style.STROKE);
+        drawPaint.setStrokeJoin(Paint.Join.ROUND);
+        drawPaint.setStrokeCap(Paint.Cap.ROUND);
+        drawPaint.setStrokeWidth(8);
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888); // Создаем битмап нужного размера
-        canvas = new Canvas(bitmap);                             // Канава для рисования
+        bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+        canvas = new Canvas(bitmap);
     }
 
     @Override
@@ -59,7 +59,7 @@ public class ParabolaYourself extends View {
         //параметры
         float x1 = -5;
         float x2 = 5;
-        float step = 0.00001f;
+        float step = 5 / (width / 2 - 20);
         float a = Float.parseFloat(this.getA1());
         float b = Float.parseFloat(this.getB1());
         float c = Float.parseFloat(this.getC1());
@@ -106,21 +106,21 @@ public class ParabolaYourself extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        float touchX = event.getX();                                 // Получаем координату Х
-        float touchY = event.getY();                                 // Получаем координату Y
+        float touchX = event.getX();
+        float touchY = event.getY();
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                path.moveTo(touchX, touchY);                         // Начало движения
+                path.moveTo(touchX, touchY);
                 break;
             case MotionEvent.ACTION_MOVE:
-                path.lineTo(touchX, touchY);                         // Продолжение линии
+                path.lineTo(touchX, touchY);
                 break;
             default:
                 return false;
         }
 
-        invalidate();                                                // Обновляем изображение
+        invalidate();
         return true;
     }
     public String getA1() {

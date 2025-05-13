@@ -31,20 +31,20 @@ public class DirectYourself extends View {
 
     private void setupDrawing() {
         drawPaint = new Paint();
-        drawPaint.setAntiAlias(true);      // Включаем сглаживание
-        drawPaint.setDither(true);         // Включаем эффект дитеринга
-        drawPaint.setColor(Color.MAGENTA);      // Цвет кисти красный
-        drawPaint.setStyle(Paint.Style.STROKE); // Режим рисования — линия
-        drawPaint.setStrokeJoin(Paint.Join.ROUND); // Тип соединения отрезков
-        drawPaint.setStrokeCap(Paint.Cap.ROUND);  // Форма концов линии
-        drawPaint.setStrokeWidth(8);       // Толщина линии
+        drawPaint.setAntiAlias(true);
+        drawPaint.setDither(true);
+        drawPaint.setColor(Color.MAGENTA);
+        drawPaint.setStyle(Paint.Style.STROKE);
+        drawPaint.setStrokeJoin(Paint.Join.ROUND);
+        drawPaint.setStrokeCap(Paint.Cap.ROUND);
+        drawPaint.setStrokeWidth(8);
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888); // Создаем битмап нужного размера
-        canvas = new Canvas(bitmap);                             // Канава для рисования
+        bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+        canvas = new Canvas(bitmap);
     }
 
     @Override
@@ -93,9 +93,9 @@ public class DirectYourself extends View {
         paint.setStrokeWidth(5);
         paint.setColor(Color.BLACK);
         canvas.drawLine(width/2, 0, width/2, height, paint);
-        canvas.drawLine(0, height/2, width, height/2, paint);    // Рисуем фон
+        canvas.drawLine(0, height/2, width, height/2, paint);
 
-        canvas.drawPath(path, drawPaint);                            // Отображаем нарисованные пути
+        canvas.drawPath(path, drawPaint);
 
         if (showFunction) {
             Direct.drawFunction(canvas, k, b);
@@ -104,21 +104,21 @@ public class DirectYourself extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        float touchX = event.getX();                                 // Получаем координату Х
-        float touchY = event.getY();                                 // Получаем координату Y
+        float touchX = event.getX();
+        float touchY = event.getY();
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                path.moveTo(touchX, touchY);                         // Начало движения
+                path.moveTo(touchX, touchY);
                 break;
             case MotionEvent.ACTION_MOVE:
-                path.lineTo(touchX, touchY);                         // Продолжение линии
+                path.lineTo(touchX, touchY);
                 break;
             default:
                 return false;
         }
 
-        invalidate();                                                // Обновляем изображение
+        invalidate();
         return true;
     }
     public String getK() {

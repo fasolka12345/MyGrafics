@@ -1,8 +1,10 @@
 package com.example.mygrafics;
 
 import android.content.Intent;
+import android.graphics.Path;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,18 +27,13 @@ public class LineRootYourselfActivity extends AppCompatActivity {
         rootYourselfView.setB2(b2);
         rootYourselfView.setC2(c2);
 
-        View compareDirect = findViewById(R.id.textCompareRoot);
-        compareDirect.setOnClickListener(this::clickCompareRoot);
+        View compareRoot = findViewById(R.id.textCompareRoot);
+        compareRoot.setOnClickListener(this::clickCompareRoot);
     }
 
     public void clickCompareRoot(View view) {
-        Intent intent = new Intent(LineRootYourselfActivity.this, LineRootActivity.class);
-        String a2 = getIntent().getStringExtra("a2");
-        String b2 = getIntent().getStringExtra("b2");
-        String c2 = getIntent().getStringExtra("c2");
-        intent.putExtra("a2", a2);
-        intent.putExtra("b2", b2);
-        intent.putExtra("c2", c2);
-        startActivity(intent);
+        RootYourself RootYourselfView = findViewById(R.id.rootYourselfView);
+        RootYourselfView.showFunction();
+        RootYourselfView.invalidate();
     }
 }
