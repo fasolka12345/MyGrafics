@@ -29,11 +29,20 @@ public class LineRootYourselfActivity extends AppCompatActivity {
 
         View compareRoot = findViewById(R.id.textCompareRoot);
         compareRoot.setOnClickListener(this::clickCompareRoot);
+
+        View exitRoot = findViewById(R.id.textExitRoot);
+        exitRoot.setOnClickListener(this::clickExitRoot);
     }
 
     public void clickCompareRoot(View view) {
         RootYourself RootYourselfView = findViewById(R.id.rootYourselfView);
         RootYourselfView.showFunction();
         RootYourselfView.invalidate();
+    }
+
+    public void clickExitRoot(View view) {
+        moveTaskToBack(true);
+        android.os.Process.killProcess(android.os.Process.myPid());
+        System.exit(0);
     }
 }

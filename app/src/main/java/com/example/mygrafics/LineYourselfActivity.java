@@ -27,11 +27,20 @@ public class LineYourselfActivity extends AppCompatActivity {
 
         View compareDirect = findViewById(R.id.textCompareDirect);
         compareDirect.setOnClickListener(this::clickCompareDirect);
+
+        View exitDirect = findViewById(R.id.textExitDirect);
+        exitDirect.setOnClickListener(this::clickExitDirect);
     }
 
     public void clickCompareDirect(View view) {
         DirectYourself directYourselfView = findViewById(R.id.directYourselfView);
         directYourselfView.showFunction();
         directYourselfView.invalidate();
+    }
+
+    public void clickExitDirect(View view) {
+        moveTaskToBack(true);
+        android.os.Process.killProcess(android.os.Process.myPid());
+        System.exit(0);
     }
 }

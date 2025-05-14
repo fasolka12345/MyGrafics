@@ -29,11 +29,20 @@ public class LineParabolaYourselfActivity extends AppCompatActivity {
 
         View compareParabola = findViewById(R.id.textCompareParabola);
         compareParabola.setOnClickListener(this::clickCompareParabola);
+
+        View exitParabola = findViewById(R.id.textExitParabola);
+        exitParabola.setOnClickListener(this::clickExitParabola);
     }
 
     public void clickCompareParabola(View view) {
         ParabolaYourself parabolaYourselfView = findViewById(R.id.parabolaYourselfView);
         parabolaYourselfView.showFunction();
         parabolaYourselfView.invalidate();
+    }
+
+    public void clickExitParabola(View view) {
+        moveTaskToBack(true);
+        android.os.Process.killProcess(android.os.Process.myPid());
+        System.exit(0);
     }
 }
