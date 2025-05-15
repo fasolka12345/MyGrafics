@@ -28,6 +28,9 @@ public class LineYourselfActivity extends AppCompatActivity {
 
         View exitDirect = findViewById(R.id.textExitDirectYourself);
         exitDirect.setOnClickListener(this::clickExitDirectYourself);
+
+        View back = findViewById(R.id.textBack);
+        back.setOnClickListener(this::clickBack);
     }
 
     public void clickCompareDirect(View view) {
@@ -40,5 +43,9 @@ public class LineYourselfActivity extends AppCompatActivity {
         moveTaskToBack(true);
         android.os.Process.killProcess(android.os.Process.myPid());
         System.exit(0);
+    }
+
+    public void clickBack(View view) {
+        finishAndRemoveTask();
     }
 }

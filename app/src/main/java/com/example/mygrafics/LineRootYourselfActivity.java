@@ -30,6 +30,9 @@ public class LineRootYourselfActivity extends AppCompatActivity {
 
         View exitRoot = findViewById(R.id.textExitRootYourself);
         exitRoot.setOnClickListener(this::clickExitRootYourself);
+
+        View back = findViewById(R.id.textBack);
+        back.setOnClickListener(this::clickBack);
     }
 
     public void clickCompareRoot(View view) {
@@ -42,5 +45,9 @@ public class LineRootYourselfActivity extends AppCompatActivity {
         moveTaskToBack(true);
         android.os.Process.killProcess(android.os.Process.myPid());
         System.exit(0);
+    }
+
+    public void clickBack(View view) {
+        finishAndRemoveTask();
     }
 }

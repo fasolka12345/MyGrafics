@@ -30,6 +30,9 @@ public class LineParabolaYourselfActivity extends AppCompatActivity {
 
         View exitParabola = findViewById(R.id.textExitParabolaYourself);
         exitParabola.setOnClickListener(this::clickExitParabolaYourself);
+
+        View back = findViewById(R.id.textBack);
+        back.setOnClickListener(this::clickBack);
     }
 
     public void clickCompareParabola(View view) {
@@ -42,5 +45,9 @@ public class LineParabolaYourselfActivity extends AppCompatActivity {
         moveTaskToBack(true);
         android.os.Process.killProcess(android.os.Process.myPid());
         System.exit(0);
+    }
+
+    public void clickBack(View view) {
+        finishAndRemoveTask();
     }
 }
