@@ -1,10 +1,8 @@
 package com.example.mygrafics;
 
 import android.content.Intent;
-import android.graphics.Path;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +19,7 @@ public class LineParabolaYourselfActivity extends AppCompatActivity {
         String b1 = intent.getStringExtra("b1");
         String c1 = intent.getStringExtra("c1");
 
-        setContentView(R.layout.activity_line_parabola);
+        setContentView(R.layout.activity_line_parabola_compare);
         ParabolaYourself parabolaYourselfView = findViewById(R.id.parabolaYourselfView);
         parabolaYourselfView.setA1(a1);
         parabolaYourselfView.setB1(b1);
@@ -30,8 +28,8 @@ public class LineParabolaYourselfActivity extends AppCompatActivity {
         View compareParabola = findViewById(R.id.textCompareParabola);
         compareParabola.setOnClickListener(this::clickCompareParabola);
 
-        View exitParabola = findViewById(R.id.textExitParabola);
-        exitParabola.setOnClickListener(this::clickExitParabola);
+        View exitParabola = findViewById(R.id.textExitParabolaYourself);
+        exitParabola.setOnClickListener(this::clickExitParabolaYourself);
     }
 
     public void clickCompareParabola(View view) {
@@ -40,7 +38,7 @@ public class LineParabolaYourselfActivity extends AppCompatActivity {
         parabolaYourselfView.invalidate();
     }
 
-    public void clickExitParabola(View view) {
+    public void clickExitParabolaYourself(View view) {
         moveTaskToBack(true);
         android.os.Process.killProcess(android.os.Process.myPid());
         System.exit(0);

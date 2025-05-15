@@ -5,31 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.mygrafics.RootYourself
-        android:id="@+id/rootYourselfView"
+    <com.example.mygrafics.Root
+        android:id="@+id/rootView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.8"
+        app:layout_constraintHeight_percent="0.9"
         app:layout_constraintWidth_percent="1.0"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
-
-    <TextView
-        android:id="@+id/textCompareRoot"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.1"
-        app:layout_constraintWidth_percent="1.0"
-        app:layout_constraintTop_toBottomOf="@+id/rootYourselfView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:fontFamily="casual"
-        android:gravity="center"
-        android:text="Compare graphs"
-        android:onClick="clickCompareRoot"
-        android:textColor="#959494"
-        android:textSize="34sp" />
 
     <TextView
         android:id="@+id/textExitRoot"
@@ -45,7 +29,7 @@
         app:layout_constraintHeight_percent="0.1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textCompareRoot"
+        app:layout_constraintTop_toBottomOf="@+id/rootView"
         app:layout_constraintWidth_percent="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

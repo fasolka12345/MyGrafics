@@ -1,10 +1,8 @@
 package com.example.mygrafics;
 
 import android.content.Intent;
-import android.graphics.Path;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +19,7 @@ public class LineRootYourselfActivity extends AppCompatActivity {
         String b2 = intent.getStringExtra("b2");
         String c2 = intent.getStringExtra("c2");
 
-        setContentView(R.layout.activity_line_root);
+        setContentView(R.layout.activity_line_root_compare);
         RootYourself rootYourselfView = findViewById(R.id.rootYourselfView);
         rootYourselfView.setA2(a2);
         rootYourselfView.setB2(b2);
@@ -31,7 +29,7 @@ public class LineRootYourselfActivity extends AppCompatActivity {
         compareRoot.setOnClickListener(this::clickCompareRoot);
 
         View exitRoot = findViewById(R.id.textExitRoot);
-        exitRoot.setOnClickListener(this::clickExitRoot);
+        exitRoot.setOnClickListener(this::clickExitRootYourself);
     }
 
     public void clickCompareRoot(View view) {
@@ -40,7 +38,7 @@ public class LineRootYourselfActivity extends AppCompatActivity {
         RootYourselfView.invalidate();
     }
 
-    public void clickExitRoot(View view) {
+    public void clickExitRootYourself(View view) {
         moveTaskToBack(true);
         android.os.Process.killProcess(android.os.Process.myPid());
         System.exit(0);
