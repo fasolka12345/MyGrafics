@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.068" />
 
     <TextView
-        android:id="@+id/textRo"
+        android:id="@+id/textRoot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="casual"
@@ -61,7 +61,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textRo"
+        app:layout_constraintTop_toBottomOf="@+id/textRoot"
         app:layout_constraintVertical_bias="0.099" />
 
     <EditText

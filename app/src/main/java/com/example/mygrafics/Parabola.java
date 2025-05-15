@@ -71,7 +71,7 @@ public class Parabola extends View {
 
         // стром график
         paint.setStrokeWidth(7);
-        paint.setColor(Color.BLUE);
+        paint.setColor(Color.CYAN);
         float prevX = x1;
         float prevY = a * (x1 + b)*(x1 + b) + c;
         for (float x = x1 + step; x <= x2; x += step) {

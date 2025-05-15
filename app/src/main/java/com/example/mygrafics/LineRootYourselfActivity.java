@@ -28,7 +28,7 @@ public class LineRootYourselfActivity extends AppCompatActivity {
         View compareRoot = findViewById(R.id.textCompareRoot);
         compareRoot.setOnClickListener(this::clickCompareRoot);
 
-        View exitRoot = findViewById(R.id.textExitRoot);
+        View exitRoot = findViewById(R.id.textExitRootYourself);
         exitRoot.setOnClickListener(this::clickExitRootYourself);
     }
 
