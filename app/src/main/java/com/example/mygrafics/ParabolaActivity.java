@@ -20,6 +20,9 @@ public class ParabolaActivity extends AppCompatActivity {
 
         View createYourselfParabola = findViewById(R.id.textCreateYourselfParabola);
         createYourselfParabola.setOnClickListener(this::clickCreateYourselfParabola);
+
+        View back = findViewById(R.id.textBack);
+        back.setOnClickListener(this::clickBackParabola);
     }
     public void clickCreateParabola(View view) {
         EditText editTexta1 = findViewById(R.id.editTexta1);
@@ -41,5 +44,9 @@ public class ParabolaActivity extends AppCompatActivity {
         intent.putExtra("b1", editTextb1.getText().toString());
         intent.putExtra("c1", editTextc1.getText().toString());
         startActivity(intent);
+    }
+
+    public void clickBackParabola(View view) {
+        finishAndRemoveTask();
     }
 }

@@ -22,6 +22,9 @@ public class GraficsActivity extends AppCompatActivity {
 
         View root = findViewById(R.id.textRoot);
         root.setOnClickListener(this::clickRoot);
+
+        View back = findViewById(R.id.textBack);
+        back.setOnClickListener(this::clickBackGrafics);
     }
 
     public void clickDirect(View view) {
@@ -37,5 +40,9 @@ public class GraficsActivity extends AppCompatActivity {
     public void clickRoot(View view) {
         Intent intent = new Intent(getApplicationContext(), RootActivity.class);
         startActivity(intent);
+    }
+
+    public void clickBackGrafics(View view) {
+        finishAndRemoveTask();
     }
 }

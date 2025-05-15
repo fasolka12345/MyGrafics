@@ -15,10 +15,17 @@ public class AboutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about); //
 
         View start = findViewById(R.id.textView13);
-        start.setOnClickListener(this::clickStart);//
+        start.setOnClickListener(this::clickStart);
+
+        View back = findViewById(R.id.textView10);
+        back.setOnClickListener(this::clickBackAbout);//
     }
     public void clickStart(View view) {
         Intent intent = new Intent(getApplicationContext(), GraficsActivity.class);
         startActivity(intent);
+    }
+
+    public void clickBackAbout(View view) {
+        finishAndRemoveTask();
     }
 }

@@ -20,6 +20,9 @@ public class RootActivity extends AppCompatActivity {
 
         View createYourselfRoot = findViewById(R.id.textCreateYourselfRoot);
         createYourselfRoot.setOnClickListener(this::clickCreateYourselfRoot);
+
+        View back = findViewById(R.id.textBack);
+        back.setOnClickListener(this::clickBackRoot);
     }
     public void clickCreateRoot(View view) {
         EditText editTexta2 = findViewById(R.id.editTexta2);
@@ -41,5 +44,9 @@ public class RootActivity extends AppCompatActivity {
         intent.putExtra("b2", editTextb2.getText().toString());
         intent.putExtra("c2", editTextc2.getText().toString());
         startActivity(intent);
+    }
+
+    public void clickBackRoot(View view) {
+        finishAndRemoveTask();
     }
 }

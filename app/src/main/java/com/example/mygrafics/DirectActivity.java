@@ -21,6 +21,9 @@ public class DirectActivity extends AppCompatActivity {
 
         View createYourself = findViewById(R.id.textCreateYourselfDirect);
         createYourself.setOnClickListener(this::clickCreateYourselfDirect);
+
+        View back = findViewById(R.id.textBack);
+        back.setOnClickListener(this::clickBackDirect);
     }
     public void clickCreateDirect(View view) {
         EditText editTextk = findViewById(R.id.editTextk);
@@ -38,5 +41,9 @@ public class DirectActivity extends AppCompatActivity {
         intent.putExtra("k", editTextk.getText().toString());
         intent.putExtra("b", editTextb.getText().toString());
         startActivity(intent);
+    }
+
+    public void clickBackDirect(View view) {
+        finishAndRemoveTask();
     }
 }
