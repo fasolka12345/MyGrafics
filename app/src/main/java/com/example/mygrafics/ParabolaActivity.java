@@ -39,7 +39,7 @@ public class ParabolaActivity extends AppCompatActivity {
         EditText editTexta1 = findViewById(R.id.editTexta1);
         EditText editTextb1 = findViewById(R.id.editTextb1);
         EditText editTextc1 = findViewById(R.id.editTextc1);
-        Intent intent = new Intent(getApplicationContext(), LineParabolaYourselfActivity.class);
+        Intent intent = new Intent(getApplicationContext(), LineParabolaCompareActivity.class);
         intent.putExtra("a1", editTexta1.getText().toString());
         intent.putExtra("b1", editTextb1.getText().toString());
         intent.putExtra("c1", editTextc1.getText().toString());

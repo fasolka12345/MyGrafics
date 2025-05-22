@@ -55,15 +55,15 @@
             android:exported="true">
         </activity>
         <activity
-            android:name=".LineYourselfActivity"
+            android:name=".LineCompareActivity"
             android:exported="true">
         </activity>
         <activity
-            android:name=".LineParabolaYourselfActivity"
+            android:name=".LineParabolaCompareActivity"
             android:exported="true">
         </activity>
         <activity
-            android:name=".LineRootYourselfActivity"
+            android:name=".LineRootCompareActivity"
             android:exported="true">
         </activity>
     </application>

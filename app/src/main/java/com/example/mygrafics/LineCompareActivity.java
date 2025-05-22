@@ -7,7 +7,7 @@ import android.view.View;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LineYourselfActivity extends AppCompatActivity {
+public class LineCompareActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +26,8 @@ public class LineYourselfActivity extends AppCompatActivity {
         View compareDirect = findViewById(R.id.textCompareDirect);
         compareDirect.setOnClickListener(this::clickCompareDirect);
 
-        View exitDirect = findViewById(R.id.textExitDirectYourself);
-        exitDirect.setOnClickListener(this::clickExitDirectYourself);
+        View exitDirect = findViewById(R.id.textExitDirectCompare);
+        exitDirect.setOnClickListener(this::clickExitDirectCompare);
 
         View back = findViewById(R.id.textBack);
         back.setOnClickListener(this::clickBack);
@@ -39,7 +39,7 @@ public class LineYourselfActivity extends AppCompatActivity {
         directYourselfView.invalidate();
     }
 
-    public void clickExitDirectYourself(View view) {
+    public void clickExitDirectCompare(View view) {
         moveTaskToBack(true);
         android.os.Process.killProcess(android.os.Process.myPid());
         System.exit(0);

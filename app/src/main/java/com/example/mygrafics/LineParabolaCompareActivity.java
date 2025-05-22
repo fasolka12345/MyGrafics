@@ -7,7 +7,7 @@ import android.view.View;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LineParabolaYourselfActivity extends AppCompatActivity {
+public class LineParabolaCompareActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +28,8 @@ public class LineParabolaYourselfActivity extends AppCompatActivity {
         View compareParabola = findViewById(R.id.textCompareParabola);
         compareParabola.setOnClickListener(this::clickCompareParabola);
 
-        View exitParabola = findViewById(R.id.textExitParabolaYourself);
-        exitParabola.setOnClickListener(this::clickExitParabolaYourself);
+        View exitParabola = findViewById(R.id.textExitParabolaCompare);
+        exitParabola.setOnClickListener(this::clickExitParabolaCompare);
 
         View back = findViewById(R.id.textBack);
         back.setOnClickListener(this::clickBack);
@@ -41,7 +41,7 @@ public class LineParabolaYourselfActivity extends AppCompatActivity {
         parabolaYourselfView.invalidate();
     }
 
-    public void clickExitParabolaYourself(View view) {
+    public void clickExitParabolaCompare(View view) {
         moveTaskToBack(true);
         android.os.Process.killProcess(android.os.Process.myPid());
         System.exit(0);

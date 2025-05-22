@@ -39,7 +39,7 @@ public class RootActivity extends AppCompatActivity {
         EditText editTexta2 = findViewById(R.id.editTexta2);
         EditText editTextb2 = findViewById(R.id.editTextb2);
         EditText editTextc2 = findViewById(R.id.editTextc2);
-        Intent intent = new Intent(getApplicationContext(), LineRootYourselfActivity.class);
+        Intent intent = new Intent(getApplicationContext(), LineRootCompareActivity.class);
         intent.putExtra("a2", editTexta2.getText().toString());
         intent.putExtra("b2", editTextb2.getText().toString());
         intent.putExtra("c2", editTextc2.getText().toString());

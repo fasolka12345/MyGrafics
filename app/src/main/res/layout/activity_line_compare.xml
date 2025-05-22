@@ -54,12 +54,12 @@
         app:layout_constraintWidth_percent="1.0" />
 
     <TextView
-        android:id="@+id/textExitDirectYourself"
+        android:id="@+id/textExitDirectCompare"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fontFamily="casual"
         android:gravity="center"
-        android:onClick="clickExitDirectYourself"
+        android:onClick="clickExitDirectCompare"
         android:text="Exit"
         android:textColor="#959494"
         android:textSize="34sp"

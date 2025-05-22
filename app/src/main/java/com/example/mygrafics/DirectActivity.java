@@ -1,6 +1,5 @@
 package com.example.mygrafics;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -37,7 +36,7 @@ public class DirectActivity extends AppCompatActivity {
     public void clickCreateYourselfDirect(View view) {
         EditText editTextk = findViewById(R.id.editTextk);
         EditText editTextb = findViewById(R.id.editTextb);
-        Intent intent = new Intent(getApplicationContext(), LineYourselfActivity.class);
+        Intent intent = new Intent(getApplicationContext(), LineCompareActivity.class);
         intent.putExtra("k", editTextk.getText().toString());
         intent.putExtra("b", editTextb.getText().toString());
         startActivity(intent);
